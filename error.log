@@ -1,0 +1,12 @@
+2024/02/28 07:22:33 [Info] v2ray.com/core/app/dns: DNS: created udp client inited for 1.1.1.1:53
+2024/02/28 07:22:33 [Info] v2ray.com/core/app/dns: DNS: created udp client inited for 8.8.8.8:53
+2024/02/28 07:22:33 [Info] v2ray.com/core/app/dns: DNS: created localhost client
+2024/02/28 07:22:33 [Info] v2ray.com/core/transport/internet/tcp: listening TCP on 0.0.0.0:443
+2024/02/28 07:22:33 [Warning] v2ray.com/core/transport/internet/tls: ignoring invalid X509 key pair > tls: failed to parse private key
+2024/02/28 07:22:33 [Warning] v2ray.com/core: V2Ray 4.31.0 started
+2024/02/28 07:35:26 [Info] v2ray.com/core/app/dns: DNS: created udp client inited for 1.1.1.1:53
+2024/02/28 07:35:26 [Info] v2ray.com/core/app/dns: DNS: created udp client inited for 8.8.8.8:53
+2024/02/28 07:35:26 [Info] v2ray.com/core/app/dns: DNS: created localhost client
+2024/02/28 07:35:26 [Info] v2ray.com/core/transport/internet/tcp: listening TCP on 0.0.0.0:443
+2024/02/28 07:35:26 [Warning] v2ray.com/core/transport/internet/tls: ignoring invalid X509 key pair > tls: failed to parse private key
+2024/02/28 07:35:26 [Warning] v2ray.com/core: V2Ray 4.31.0 started
