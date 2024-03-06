@@ -1,0 +1,40 @@
+{
+	"stats": {},
+	"log": {
+		"loglevel": "warning",
+		"access": "/access.log",
+		"error": "/error.log"
+	},
+	"inbounds": [
+		{
+			"port": 8080,
+			"protocol": "vless",
+			"settings": {
+				"clients": [
+					{
+						"email": "amir",
+						"flow": "",
+						"id": "93ac9c61-ba52-4b32-aef6-8b5f08ab5632"
+					}
+				],
+				"decryption": "none"
+			},
+			"streamSettings": {
+				"network": "ws",
+				"security": "none",
+				"wsSettings": {
+					"acceptProxyProtocol": false,
+					"path": "C:/",
+					"headers": {}
+				}
+			},
+			"tag": "cdn-notls"
+		}
+	],
+	"outbounds": [
+		{
+			"protocol": "freedom",
+			"tag": "chirm"
+		}
+	]
+}

@@ -1,71 +1,75 @@
 {
-  "log": {
-    "loglevel": "info",
-    "access": "C:\\v@ray\\access.log",
-    "error": "C:\\v@ray\\error.log"
-  },
-  "inbounds": [
-    {
-      "port": 443, // Change to your preferred port
-      "protocol": "vmess", // V2Ray protocol for VPN
-      "settings": {
-        "clients": [
-          {
-            "id": "620a0f44-783d-43f5-b29c-e9dd530b3d8f", // Generate a unique UUID for each client
-            "alterId": 64 // AlterID for security (adjust as needed)
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp", // Use TCP for reliability, change to "ws" for WebSocket
-        "security": "tls", // Use TLS for encryption
-        "tlsSettings": {
-          "certificates": [
-            {
-              "certificateFile": "C:\\v@ray\\cert.crt", // Path to your SSL certificate
-              "keyFile": "C:\\v@ray\\key.key" // Path to your private key
-            }
-          ]
-        }
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom",
-      "settings": {},
-      "tag": "direct"
-    }
-  ],
-  "routing": {
-    "domainStrategy": "IPOnDemand",
-    "rules": [
-      {
-        "type": "field",
-        "ip": ["geoip:private"],
-        "outboundTag": "blocked"
-      }
-    ]
-  },
-  "dns": {
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8",
-      "localhost"
-    ]
-  },
-  "policy": {
-    "levels": {
-      "0": {
-        "uplinkOnly": 0,
-        "downlinkOnly": 0
-      }
+    "log": {
+        "loglevel": "warning"
     },
-    "system": {
-      "statsInboundUplink": false,
-      "statsInboundDownlink": false,
-      "statsOutboundUplink": false,
-      "statsOutboundDownlink": false
-    }
-  }
+    "inbounds": [
+        {
+            "port": 444,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+	{
+                        "id": "93ac9c61-ba52-4b32-aef6-8b5f08ab5632",
+                        "level": 0,
+                        "email": "user4"
+                    }
+
+                ],
+                "decryption": "none",
+                "fallbacks": [
+                    {
+                        "dest": 80
+                    },
+                    {
+                        "path": "/C:/",
+                        "dest": 1234,
+                        "xver": 1
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "tls",
+                "tlsSettings": {
+                    "alpn": [
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "armani.klauss2.xyz-crt.pem",
+                            "keyFile": "armani.klauss2.xyz-key.pem"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "port": 1234,
+            "listen": "127.0.0.1",
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "93ac9c61-ba52-4b32-aef6-8b5f08ab5632",
+                        "level": 0,
+                        "email": "amir"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "none",
+                "wsSettings": {
+                    "acceptProxyProtocol": true,
+                    "path": "/C:/"
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom"
+        }
+    ]
 }
